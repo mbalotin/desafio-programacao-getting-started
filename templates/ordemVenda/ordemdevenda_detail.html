@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block body  %}
+    <ul>
+	<li>Comprador: {{ ordemdevenda.nomeComprador }}</li>
+	<li>Quantidade: {{ ordemdevenda.qtde }}</li>
+	<li>Item: {{ ordemdevenda.descricaoItem }}</li>
+	<li>Valor: {{ ordemdevenda.valorItem }}</li>
+	<li>Total Bruto: {{ ordemdevenda.totalBruto }}</li>
+	<li>Vendedor: {{ ordemdevenda.nomeVendedor }}</li>
+	<li>Endereço: {{ ordemdevenda.enderecoVendedor }}</li>
+    </ul>
+{% endblock %}

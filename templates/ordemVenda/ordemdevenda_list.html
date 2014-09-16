@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block css%}
+    <style>
+        .ordem{ width : 150px; } 
+        .itemDesc{ width : 150px; } 
+        .valor{ width : 100px; } 
+        .qtde{ width : 100px; } 
+        .vlrBruto{ width : 100px; } 
+        .endVendedor{ width : 400px; } 
+        .nomeVendedor{ width : 150px; } 
+	th{
+            background-color: #46A606;
+            height: 60px;
+	}
+    </style>
+{% endblock %}
+
+{% block body%}
+
+<table>
+    <tr>
+        <th/>
+        <th>Comprador</th>	
+        <th>Item</th>	
+        <th>Valor</th>	
+        <th>Quantidade</th>	
+        <th>Valor Bruto</th>	
+        <th>Endereço</th>	
+        <th>Vendedor</th>	
+    </tr>
+    {% for ordem in ordens %}
+        <tr>
+            <td class="editar"><a href="/consulta/{{ordem.pk}}">+</a></td>
+            <td class="ordem" >{{ordem.nomeComprador }}
+            <td class="itemDesc">{{ordem.descricaoItem}}</td>
+            <td class="valor">{{ordem.valorItem}}</td>
+            <td class="qtde">{{ordem.qtde}}</td>
+            <td class="vlrBruto">{{ordem.totalBruto}}</td>
+            <td class="endVendedor">{{ordem.enderecoVendedor}}</td>
+            <td class="nomeVendedor">{{ordem.nomeVendedor}}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}
